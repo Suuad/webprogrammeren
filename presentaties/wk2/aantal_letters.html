@@ -1,21 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>.length</title>
+	<title>aantal letters bepalen</title>
 </head>
 <body>
+	<input type="password" >
 	<script>
-		//bepaal het aantal letters in het woord "webprogrammeren"
-	    alert("webprogrammeren".length);
+	//alert("webprogrammeren".length);
+	var voorNaam = prompt("wat is je voornaam?");
 
-	    //vraag de gebruiker om  voornaam
-		var voorNaam = prompt("wat is je voornaam?");
+	var aantalLetters = voorNaam.length;
 
-		//bepaal het aantal letters
-		aantalLetters = voorNaam.length;
-
-		alert("Jouw voornaam telt " + aantalLetters + " letters.");
+	alert("Jouw voornaam telt " + aantalLetters + " letters")
 	</script>
 </body>
 </html>
+

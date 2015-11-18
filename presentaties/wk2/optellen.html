@@ -1,20 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>Optellen</title>
+	<title>optellen</title>
 </head>
 <body>
-	
 	<script>
-		var optellen = function(getal1, getal2){
-			antwoord = parseInt(getal1) + parseInt(getal2);
-			//alert(antwoord);
-			return antwoord;
-		} 
-		//optellen(4,2);
-		alert(optellen(4,2));
+	var optellen = function(getal1, getal2){
+		antwoord = getal1 + getal2;
+		alert(antwoord);
+	}
+	optellen(5,10);
+	optellen(33,6);
 
+	var delen = function(getal1, getal2){
+		antwoord = getal1 / getal2;
+		alert(antwoord);
+	}
+	delen(3,5);
+	delen(11,3);
+
+	//met nog 2 functies zou je al een eenvoudige rekenmachine kunnen maken
 	</script>
 </body>
 </html>
+
