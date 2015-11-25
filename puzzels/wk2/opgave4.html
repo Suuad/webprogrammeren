@@ -24,16 +24,19 @@
 	<script>
 	//voeg commentaar toe (in eigen woorden)
 
+
 	var vergelijkWoorden = function(){
 	
 		woord1 = document.getElementById('woord1').value;
 		woord2 = document.getElementById('woord2').value;
 	
-		if( woord1.length > woord2.length){
-	
+		if( woord1.length == woord2.length){
+			document.write("<p>De woorden zijn even lang en bevatten  " + woord2.length + " letters.</p>");
+			
+		} else if ( woord1.length > woord2.length){
 			document.write("<p>Woord1 is het langst en bevat " + woord1.length + " letters.</p>");
+			
 		} else {
-	
 			document.write("<p>Woord2 is het langst en bevat " + woord2.length + " letters.</p>");
 		}
 	}
