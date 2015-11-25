@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opgave 5 - Valuta berekenen (radiobuttons en for-loop)</title>
+	<style>
+	/* voeg zelf commentaar toe */
+	label, input { display: block;}
+	input[type="button"]{margin-top:20px;}
+	span { display:block;}
+	input[type="radio"]{ display: inline;}
+	#omgerekend {font-size: 40px;}
+	</style>
+</head>
+<body>
+	<!-- Maak nu een formulier en gebruik jouw functie -->
+	<form id="valutaForm" name="valutaForm">
+		<label for="euros">Euros:</label>
+		<input type="text" id="euros" name="euros">
+		
+		<span>Valutas:</span>
+		<input type="radio" id="dollar" name="valuta" value="dollar">Dollars
+		<input type="radio" id="peso" name="valuta" value="peso">Pesos
+		<input type="radio" id="yen" name="valuta" value="yen">Yen
+		<input type="radio" id="pond" name="valuta" value="pond">pond
+
+		<input type="button" value="Valuta omrekenen" onclick="valutaBerekenen()" />
+	</form>
+	<p id="omgerekend"> <!-- hier komt het antwoord --> </p>
+
+
+	<script>
+
+	var dollar = 1.08;
+	var peso = 18.06;
+	var yen = 132.04;
+	var pond = 0.71;
+
+	var valutaBerekenen = function(){
+
+		var euros = document.getElementById('euros').value;
+
+		//selecteer het formulier
+		var form = document.getElementById('valutaForm');
+		//selecteer alle formulier elementen
+		var valuta = form.elements['valuta'];
+
+		//met een for-loop alle radios langslopen
+		for (var i=0, len=valuta.length; i<len; i++) {
+        	if ( valuta[i].checked ) { 
+            	val = valuta[i].value; 
+            	break; 
+        	}
+    	}
+        if(val == "dollar"){ euros = euros * dollar;}
+        if(val == "peso"){ euros = euros * peso;}
+        if(val == "yen"){ euros = euros * yen;}
+        if(val == "pond"){ euros = euros * pond;}
+		
+        document.getElementById('omgerekend').innerHTML = euros;
+
+    }
+	</script>
+</body>
+</html>
+
+
+
