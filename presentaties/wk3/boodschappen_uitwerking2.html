@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Boodschappenlijstje</title>
+<style>
+	.blok {
+		height:100px;
+		width:300px;
+		background:#0000FF;
+		color:#FFFFFF;
+		margin:20px;
+		padding:20px;
+		border-radius: 10px;
+		/*display:inline-block;*/
+	}
+</style>
+</head>
+<body>
+	<h1>Boodschappenlijstje - nu met divjes i.p.v list-tems</h1>
+	<input type="text" id="invoer" placeholder="wat heb je nodig?">
+	<input type="button" id="knop" value="toevoegen">
+
+	<div id="menu"> 
+		<!-- hier komen de boodschappen -->
+	</div>
+
+	<script>
+		var toevoegen = function(){
+			//invoer selecteren en opslaan
+			var invoer = document.getElementById('invoer').value;
+			//lijst selecteren en vullen met html
+			var lijst = document.getElementById('menu');
+			//oude lijst combineren met (nieuwe) invoer
+			lijst.innerHTML = lijst.innerHTML  + "<div class='blok'>" + invoer + "</div>";
+			//invoerveld leegmaken
+			document.getElementById('invoer').value = "";
+		}
+
+		//functie toevoegen aanroepen na klik
+		document.getElementById('knop').onclick = function(){
+				toevoegen();
+		}
+
+		//reageren op enter-toets (event)
+		document.getElementById('invoer').onkeyup = function(event){
+			if(event.keyCode == 13){
+				toevoegen();
+			}
+		}
+	</script>
+</body>
+</html>
